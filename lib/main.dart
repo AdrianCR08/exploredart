@@ -1,6 +1,5 @@
 import 'package:exploredart/basic_screen.dart';
 import 'package:flutter/material.dart';
-import 'immutable_widget.dart';
 
 void main(){
   runApp(StaticApp());

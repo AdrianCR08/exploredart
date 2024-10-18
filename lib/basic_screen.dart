@@ -1,6 +1,5 @@
-import 'package:exploredart/immutable_widget.dart';
+import 'package:exploredart/text_layout.dart';
 import 'package:flutter/material.dart';
-import 'immutable_widget.dart';
 
 class BasicScreen extends StatelessWidget {
   const BasicScreen({super.key});
@@ -11,7 +10,12 @@ class BasicScreen extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.indigoAccent,
-          title: const Text('GeeksforGeeks'),
+          title: const Center(
+            child: Text(
+              'GeeksforGeeks',
+              style: TextStyle(fontSize: 20, color: Colors.white),
+            ),
+          ),
           actions: const <Widget>[
             Padding(
               padding: EdgeInsets.all(10.0),
@@ -22,16 +26,17 @@ class BasicScreen extends StatelessWidget {
         drawer: Drawer(
           child: Container(
             color: Colors.lightBlue,
-            child: Center(
+            child: const Center(
               child: Text("I'm a drawer!"),
             ),
           ),
         ),
-        body: const Center(
-          child: AspectRatio(
-            aspectRatio: 1.0,
-            child: ImmutableWidget(),
-          ),
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Image.asset('assets/images/beach.jpg'),
+            const TextLayout(),
+          ],
         ),
       ),
     );
